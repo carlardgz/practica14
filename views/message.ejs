@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <link href="/assets/style.css" type="text/css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1>Person: <%= ID %></h1>
+        <h2>Message: <%= message %></h2>
+
+    <!-- switch tomar el mensaje y lo compara con cada caso para saber qué se debe de ver en el html -->
+    <% switch (message) { 
+        case 'Bienvenido': %>
+        <!-- ciclo que toma el numero de times para que sepa cuándo dejar de contar -->
+        <% for (let i = 1; i <= times; i++) { %>
+        <!-- imprimir mensahe e id -->
+            <li><%= message %> <%= ID %></li><% } %>
+        <% break;
+        case 'Adios': %>
+        <% for (let i = 1; i <= times; i++) { %>
+            <li><%= message %> <%= ID %></li><% } %>
+        <% break;
+        case 'Hola': %>
+        <% for (let i = 1; i <= times; i++) { %>
+            <li><%= message %> <%= ID %></li><% } %>
+        <% break;
+        <!-- si se pide un mensaje no especificado pide que se escriba uno de los que sí existen -->
+        default: %>
+        <h2><%= ID %>, el mensaje "<%= message %>" no existe. Usa "Hola", "Adios" o "Bienvenido". </h2>
+        <% break; 
+    } %>
+    </body>
+</html> 
